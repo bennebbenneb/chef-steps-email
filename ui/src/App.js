@@ -62,6 +62,8 @@ class App extends React.Component {
                 <h1>ChefSteps</h1>
                 <h2>Remove Duplicates</h2>
                 <p>I am using this list of emails. <a href="/stubs/emails.json">Email List</a></p>
+                <p>I put the code on my GitHub account. <a
+                    href="https://github.com/bensisson/chef-steps-email/blob/master/ui/src/App.js">View Code</a></p>
                 <p>To change the endpoint enter the full URL into the text field. The original URL
                     is {this.state.originalEmailsEndpoint}</p>
                 <form onSubmit={this.handleSubmit.bind(this)}>

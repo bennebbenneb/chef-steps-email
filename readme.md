@@ -1,1 +1,1 @@
-https://dashboard.heroku.com/apps/chef-steps-email
+https://chef-steps-email.herokuapp.com/

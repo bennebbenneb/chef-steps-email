@@ -50,7 +50,8 @@ class App extends React.Component {
                 <h2>Remove Duplicates</h2>
                 <p>I am using this list of emails. <a href="/stubs/emails.json">Email List</a></p>
                 <p>I put the code on my GitHub account. <a
-                    href="https://github.com/bensisson/chef-steps-email/blob/master/ui/src/App.js">View Code</a></p>
+                    href="https://github.com/bensisson/chef-steps-email/blob/master/ui/src/emailDedupe/emailDedupe.js">Dedupe Code</a> <a
+                    href="https://github.com/bensisson/chef-steps-email/blob/master/ui/__tests__/emailDedupe.test.js">Dedupe Tests</a></p>
                 <p>Endpoints</p>
                 <ul>
                     <li>{this.state.originalEmailsEndpoint}</li>

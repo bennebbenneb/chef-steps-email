@@ -31,14 +31,20 @@ class App extends React.Component {
         event.preventDefault();
         axios.get(this.state.emailsEndpoint)
             .then((response) => {
+
+                // Make sure the data is in the correct format
                 if (!Array.isArray(response.data) || typeof response.data[0] !== "string") {
                     alert("The endpoint needs to return an array of strings");
                     return;
                 }
                 const originalNumberOfEmails = response.data.length;
                 const emailsObject = response.data.reduce((acc, email, index) => {
+
+                    // Make sure this email isn't a duplicate
                     if (acc.map[email] !== true) {
                         acc.map[email] = true;
+
+                        // this will create a sparsely populated array
                         acc.array[index] = email;
                     }
                     return acc;
@@ -46,7 +52,12 @@ class App extends React.Component {
                     map: {},
                     array: []
                 });
-                const emailArrayNoDuplicates = emailsObject.array;
+
+                // Filter out the empty array values and save
+                const emailArrayNoDuplicates = emailsObject.array.filter((email) => {
+                    return email;
+                });
+
                 const noDuplicatesNumberOfEmails = emailArrayNoDuplicates.length;
                 this.setState({
                     originalNumberOfEmails,

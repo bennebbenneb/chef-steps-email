@@ -15,7 +15,6 @@ class App extends React.Component {
     }
 
     handleChange(event) {
-        console.log(event.target.value)
         this.setState({
             textFieldTemp: event.target.value
         });
@@ -38,17 +37,17 @@ class App extends React.Component {
                 }
                 const originalNumberOfEmails = response.data.length;
                 const emailsObject = response.data.reduce((acc, email, index) => {
-                    if (acc[email] !== true) {
-                        acc[email] = true;
-                        acc.___arr[index] = email;
+                    if (acc.map[email] !== true) {
+                        acc.map[email] = true;
+                        acc.array[index] = email;
                     }
                     return acc;
                 }, {
-                    ___arr: []
+                    map: {},
+                    array: []
                 });
-                const emailArrayNoDuplicates = emailsObject.___arr;
+                const emailArrayNoDuplicates = emailsObject.array;
                 const noDuplicatesNumberOfEmails = emailArrayNoDuplicates.length;
-
                 this.setState({
                     originalNumberOfEmails,
                     noDuplicatesNumberOfEmails
@@ -71,8 +70,10 @@ class App extends React.Component {
                     <input type="submit"/>
 
                 </form>
-                <p><a href="#" onClick={this.handleClick.bind(this)}>Click here</a> to fetch the emails and remove
-                    duplicates</p>
+                <p>
+                    <button onClick={this.handleClick.bind(this)}>Click here</button> to
+                    fetch the emails and remove duplicates
+                </p>
                 {
                     this.state.originalNumberOfEmails ?
                         <p>

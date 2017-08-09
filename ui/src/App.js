@@ -51,8 +51,13 @@ class App extends React.Component {
                 <p>I am using this list of emails. <a href="/stubs/emails.json">Email List</a></p>
                 <p>I put the code on my GitHub account. <a
                     href="https://github.com/bensisson/chef-steps-email/blob/master/ui/src/App.js">View Code</a></p>
-                <p>To change the endpoint enter the full URL into the text field. The original URL
-                    is {this.state.originalEmailsEndpoint}</p>
+                <p>Endpoints</p>
+                <ul>
+                    <li>{this.state.originalEmailsEndpoint}</li>
+                    <li>/stubs/emails.test1.json</li>
+                    <li>/stubs/emails.test2.json</li>
+                </ul>
+                <p>To change the endpoint enter the it into the text field.</p>
                 <form onSubmit={this.handleSubmit.bind(this)}>
                     <input onChange={this.handleChange.bind(this)} value={this.state.textFieldTemp} type="text"/>
                     <input type="submit"/>
